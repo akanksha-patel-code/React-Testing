@@ -7,7 +7,7 @@ export default function Header({
     return (
         <>
             <h1 className="header">{title}</h1>
-            <h3 className="header">Cats</h3>
+            <h3 title="Header" className="header">Cats</h3>
         </>
     )
 }
