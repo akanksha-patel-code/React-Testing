@@ -30,3 +30,13 @@ it('should render same text passed into title prop getByText', () => {
     const headingElement = screen.getByTestId("header");
     expect(headingElement).toBeInTheDocument();
   });
+
+  // When we need things synchronous we will go for findBy over getBy
+
+  it('should render same text passed into title prop findByText', async () => {
+    render(<Header title="My Header"/>);
+    const headingElement = await screen.findByText(/my header/i);
+    expect(headingElement).toBeInTheDocument();
+  });
+
+
