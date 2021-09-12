@@ -39,4 +39,16 @@ it('should render same text passed into title prop getByText', () => {
     expect(headingElement).toBeInTheDocument();
   });
 
+  // QueryBy
 
+//   it('should render same text passed into title prop getBy', async () => {
+//     render(<Header title="My Header"/>);
+//     const headingElement = screen.getByText(/dogs/i); // something that doesnt exist on the page
+//     expect(headingElement).toBeInTheDocument();
+//   });
+
+it('should render same text passed into title prop queryByText', async () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.queryByText(/dogs/i);
+    expect(headingElement).not.toBeInTheDocument();
+  });
