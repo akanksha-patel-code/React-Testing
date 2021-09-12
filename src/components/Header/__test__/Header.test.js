@@ -24,3 +24,9 @@ it('should render same text passed into title prop getByText', () => {
     const headingElement = screen.getByTitle("Header");
     expect(headingElement).toBeInTheDocument();
   });
+
+  it('should render same text passed into title prop getByTestId', () => {
+    render(<Header title="My Header"/>);
+    const headingElement = screen.getByTestId("header");
+    expect(headingElement).toBeInTheDocument();
+  });
